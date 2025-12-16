@@ -1,0 +1,35 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    container_name: bedrock_app
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:1.25
+    container_name: bedrock_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+
+  db:
+    image: mariadb:10.11
+    container_name: bedrock_db
+    environment:
+      MYSQL_DATABASE: bedrock
+      MYSQL_USER: bedrock
+      MYSQL_PASSWORD: bedrock
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
