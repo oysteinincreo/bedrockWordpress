@@ -3,6 +3,8 @@ web/app/plugins/*
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*/
 web/app/themes/twentytwentyfive/
+web/app/themes/wordpressReact/build
+web/app/themes/wordpressReact/node_modules
 web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep

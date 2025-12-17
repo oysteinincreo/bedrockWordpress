@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "wordpress-react/hero",
+  "title": "Hero",
+  "category": "layout",
+  "icon": "cover-image",
+  "description": "Hero section with heading and content",
+  "attributes": {
+    "title": { "type": "string", "default": "" },
+    "text": { "type": "string", "default": "" },
+    "imageUrl": { "type": "string", "default": "" },
+    "imageId": { "type": "number", "default": 0 },
+    "imageAlt": { "type": "string", "default": "" }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.tsx",
+  "render": "file:./render.php"
+}
