@@ -35,10 +35,9 @@ export default function Edit({
         value={text}
         onChange={(value) => setAttributes({ text: value })}
         placeholder="Text…"
-        className="text-2xl text-green-600"
+        className="text-2xl text-red-600"
       />
 
-      {/* Bildefelt */}
       <MediaUploadCheck>
         <MediaUpload
           onSelect={(media) =>

@@ -4,6 +4,8 @@ services:
       context: .
       dockerfile: docker/php/Dockerfile
     container_name: bedrock_app
+    # Kjør PHP som standard Linux-bruker (uid 1000) for enklere filrettigheter i dev
+    user: "1000:1000"
     volumes:
       - .:/var/www/html
     depends_on:
