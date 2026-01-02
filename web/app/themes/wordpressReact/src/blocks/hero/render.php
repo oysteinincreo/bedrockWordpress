@@ -23,7 +23,7 @@ $imageAlt = $attributes['imageAlt'] ?? '';
   <?php endif; ?>
 
   <?php if ($text) : ?>
-    <p class="text-2xl text-green-600">
+    <p class="text-2xl text-red-600">
       <?php echo wp_kses_post($text); ?>
     </p>
   <?php endif; ?>
